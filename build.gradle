@@ -17,5 +17,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web' 
 	implementation 'org.codehaus.groovy:groovy'
 	implementation 'com.h2database:h2'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9.3'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
