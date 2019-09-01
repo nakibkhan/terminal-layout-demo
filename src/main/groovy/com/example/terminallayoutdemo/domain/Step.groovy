@@ -14,6 +14,6 @@ class Step {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long stepId
 
-    String stepDescription
-    StepStatus stepStatus
+    String description
+    StepStatus status
 }
