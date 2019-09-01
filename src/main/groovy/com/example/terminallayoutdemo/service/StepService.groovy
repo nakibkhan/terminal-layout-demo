@@ -18,6 +18,6 @@ class StepService {
     }
 
     Step findById(Long id)  {
-        stepRepository.findById(id) as Step
+        stepRepository.findById(id).get()
     }
 }
