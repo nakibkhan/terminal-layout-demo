@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -26,8 +27,18 @@ class StepController {
         stepService.getAll()
     }
 
-    @GetMapping(value = "/id/{value}")
-    Step findById(@PathVariable(value = "value") Long id)    {
+    @GetMapping(value = "/id/{id}")
+    Step findById(@PathVariable(value = "id") Long id)    {
         stepService.findById(id)
+    }
+
+    @PutMapping(value = "approve/id/{id}")
+    Step approveById(@PathVariable(value = "id") Long id)   {
+        stepService.approveStep(id)
+    }
+
+    @GetMapping("/approve")
+    List<Step> getAllApproved() {
+        stepService.findAllApproved()
     }
 }

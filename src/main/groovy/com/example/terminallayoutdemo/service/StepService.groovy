@@ -15,11 +15,21 @@ class StepService {
         stepRepository.save(step)
     }
 
+    Step approveStep(Long id)   {
+        Step step = stepRepository.findById(id).get()
+        step.status = StepStatus.APPROVED
+        stepRepository.save(step)
+    }
+
     List<Step> getAll() {
         stepRepository.findAll() as List
     }
 
     Step findById(Long id)  {
         stepRepository.findById(id).get()
+    }
+
+    List<Step> findAllApproved()    {
+        stepRepository.findByStatus(StepStatus.APPROVED)
     }
 }
