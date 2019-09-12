@@ -1,0 +1,4 @@
+CREATE ROLE flyway LOGIN PASSWORD 'flyway_ps' SUPERUSER CREATEDB CREATEROLE REPLICATION;
+CREATE ROLE terminal_layout_demo PASSWORD 'terminal_layout_demo_ps' CREATEDB CREATEROLE INHERIT;
+
+CREATE DATABASE terminal_layout_demo;
