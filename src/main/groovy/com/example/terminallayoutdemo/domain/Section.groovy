@@ -18,5 +18,5 @@ class Section {
 
     String description
 
-    List<Long> stepIds
+//    List<Long> stepIds
 }
